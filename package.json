@@ -9,6 +9,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.12.2"
+    "astro": "^5.12.2",
+    "glider-js": "^1.7.9",
+    "swiper": "^11.2.10",
+    "tiny-slider": "^2.9.4"
+  },
+  "devDependencies": {
+    "@types/glider-js": "^1.7.12"
   }
 }
