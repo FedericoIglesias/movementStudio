@@ -1,5 +1,5 @@
 <section>
-  <article>
+  <article class="vision">
     <div>
       <p>Vision</p>
     </div>
@@ -15,7 +15,7 @@
       <button>About Us</button>
     </div>
   </article>
-  <article>
+  <article class="classes">
     <div>
       <p>Classes</p>
     </div>
@@ -37,12 +37,14 @@
     </div>
     <div>
       <article>
+        <div class="bg"></div>
         <footer>
           <p>Sophia Bennett</p>
           <p>Founder & Instructor</p>
         </footer>
       </article>
       <article>
+        <div class="bg"></div>
         <footer>
           <p>Alisa Morris</p>
           <p>Founder & Program Manager</p>
@@ -53,13 +55,14 @@
 </section>
 
 <style>
-  section article {
+  .classes,
+  .vision {
     display: flex;
     div {
       width: 50%;
     }
     div:first-child {
-      aspect-ratio: 1/1;
+      aspect-ratio: 1.5/1;
       padding: 30px;
       & p {
         font-size: 20px;
@@ -67,6 +70,7 @@
       }
     }
     div:nth-child(2) {
+      aspect-ratio: 1.5/1;
       padding: 30px;
       padding: 50px;
       align-content: center;
@@ -96,49 +100,76 @@
       }
     }
   }
-  article:first-child div:first-child {
+  .vision div:first-child {
     background-image: url("../assets/img/dancer.avif");
     background-size: cover;
     background-position: center;
   }
-  article:nth-child(2) div:first-child {
+  .classes div:first-child {
     background-image: url("../assets/img/35731e7e3eaafe4b29d3220fae17a4ef8ae06b2e.avif");
     background-size: cover;
     background-position: center;
   }
 
   .founders {
-    & div:first-child {
+    display: flex;
+    div:first-child {
+      width: 50%;
+      padding: 30px;
       align-content: center;
+      height: 600px;
       p {
         color: black;
       }
       p:first-child {
         font-size: 30px;
-        font-weight: 500;
-        margin-bottom: 60px;
+        font-weight: bold;
+        margin-bottom: 100px;
       }
       p:nth-child(2) {
-        font-size: 20px;
-        font-style: italic;
+        font-size: 16px;
+        align-self: flex-end;
         margin-bottom: 20px;
       }
-      p:nth-child(3) {
+      p:last-child {
         font-size: 12px;
-        font-weight: 300;
+        font-style: italic;
       }
     }
     div:last-child {
-      padding: 0;
-      article:first-child{
-        background-image: url("../assets/img/face-dancer.avif");
-        background-size: cover;
-        background-position: center;
+      width: 50%;
+      footer {
+        height: 100px;
+        color: black;
+        padding: 20px;
+        p:first-child {
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        p:last-child {
+          font-size: 14px;
+          font-style: italic;
+        }
       }
-      article:last-child {
+      article:first-child footer{
+        background-color: #D900FF;
+      }
+      article:last-child footer{
+        background-color: rgb(208, 251, 249);
+      }
+      article:first-child .bg {
         background-image: url("../assets/img/girl_black_white.webp");
+      }
+      article:last-child .bg {
+        background-image: url("../assets/img/face-dancer.avif");
+      }
+      .bg {
         background-size: cover;
-        background-position: center;
+        background-position-x: center;
+        background-position-y: center;
+        height: 200px;
+        width: 100%;
       }
     }
   }
