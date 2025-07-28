@@ -1,0 +1,55 @@
+<section id="card" style="display: none;" class="fade-in">
+  <article><p>Our Social</p></article>
+  <article><p>Email us</p></article>
+  <article><p>Book with us</p></article>
+</section>
+
+<style>
+  section {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    height: 200px;
+    article {
+      font-weight: 700;
+      font-size: 26px;
+      background-color: rgb(208, 251, 249);
+      width: 100%;
+      padding: 20px;
+      p:hover {
+        transform: translate(5px, 0);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+    }
+    article:first-child {
+      background-color: rgb(31, 65, 255);
+    }
+    article:nth-child(2) {
+      background-color: black;
+    }
+    article:nth-child(3) {
+      background-color: rgb(217, 0, 255);
+      color: black;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0.5;
+      transform: translateY(60%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.2s ease-in forwards;
+  }
+</style>
+
+<script src="../libs/cards.js"></script>
