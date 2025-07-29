@@ -1,11 +1,15 @@
-<div class="background">
-  <p>Find your flow.</p>
-  <button> Reserve your spot </button>
-</div>
+---
+const { title, showButton, img } = Astro.props;
+---
 
-<style>
+<section class="background">
+  <p>{title}</p>
+  {showButton ? <button> Reserve your spot </button> : null}
+</section>
+
+<style define:vars={{ img }}>
   .background {
-    background-image: url("../assets/img/banner_studio.avif");
+    background-image: var(--img);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -24,20 +28,20 @@
     }
   }
   button {
-      position: absolute;
-      bottom: 40px;
-      left: 40px;
-      padding: 20px 30px;
-      background-color: rgb(208, 251, 249);
-      font-size: 16px;
-      color: black;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    padding: 20px 30px;
+    background-color: rgb(208, 251, 249);
+    font-size: 16px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
   button:hover {
     background-color: rgba(200, 124, 185, 1);
     color: white;
     transition: background-color 0.3s ease;
-  } 
+  }
 </style>

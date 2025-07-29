@@ -7,11 +7,16 @@ import Layouts from "../layouts/layouts.astro";
 import Phrase from "../components/phrase.astro";
 import Footer from "../components/footer.astro";
 import Cards from "../components/cards.astro";
+import BackgroundImage from "/src/assets/img/banner_studio.avif";
 ---
 
 <Layouts>
   <Header />
-  <Banner />
+  <Banner
+    title="Find your flow."
+    showButton={true}
+    img={`url(${BackgroundImage.src})`}
+  />
   <main>
     <Telepronter />
     <Information />
