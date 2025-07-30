@@ -1,15 +1,23 @@
 ---
 import Banner from "../components/banner.astro";
+import Cards from "../components/cards.astro";
 import Footer from "../components/footer.astro";
 import Header from "../components/header.astro";
 import Layouts from "../layouts/layouts.astro";
+import BackgroundImage from "/src/assets/img/men_dancers.webp";
+import Clases from "../components/classes.astro";
 ---
 
 <Layouts>
   <Header />
-  <Banner title="Classes" showButton={false} />
+  <Banner
+    title="Classes"
+    showButton={false}
+    img={`url(${BackgroundImage.src})`}
+  />
   <main>
-
+    <Clases />
   </main>
   <Footer />
+  <Cards />
 </Layouts>
