@@ -1,0 +1,25 @@
+---
+import Banner from "../components/banner.astro";
+import Cards from "../components/cards.astro";
+import Footer from "../components/footer.astro";
+import Header from "../components/header.astro";
+import Phrase from "../components/phrase.astro";
+import Telepronter from "../components/telepronter.astro";
+import Layouts from "../layouts/layouts.astro";
+import BackgroundImage from "/src/assets/img/about.webp";
+---
+
+<Layouts>
+  <Header />
+  <Banner
+    title="About Us."
+    showButton={false}
+    img={`url(${BackgroundImage.src})`}
+  />
+  <Telepronter />
+  <main>
+    <Phrase />
+  </main>
+  <Footer />
+  <Cards />
+</Layouts>
