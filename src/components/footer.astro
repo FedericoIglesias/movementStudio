@@ -25,6 +25,16 @@
 </footer>
 
 <style>
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   footer {
     background-color: rgb(208, 251, 249);
     display: grid;
@@ -37,17 +47,30 @@
       width: 210px;
       display: block;
       font-weight: bold;
+      animation: fadeIn 2s linear forwards;
+      animation-delay: 1s;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
     }
   }
   .contact {
-    font-size: 16px;
+    animation: fadeIn 2s linear forwards;
+    animation-delay: 1s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+    font-size: 20px;
     padding-top: 25px;
     div {
       margin-bottom: 20px;
     }
   }
   .address {
+    animation: fadeIn 2s linear forwards;
+    animation-delay: 1s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
     padding-top: 25px;
+    font-size: 20px;
     p:first-child {
       margin-bottom: 20px;
     }
