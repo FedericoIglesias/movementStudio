@@ -1,0 +1,41 @@
+---
+import Phrase from "./phrase.astro";
+---
+
+<section>
+  <aside>
+    <p>
+      Our classes are designed for all levels, from beginners to advanced
+      dancers.
+    </p>
+  </aside>
+  <div>
+    <Phrase button={false} />
+  </div>
+  <img src="/src/assets/img/assian_dancer.avif" alt="" />
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-areas: "aside phrase" "aside img";
+    grid-template-columns: 3fr 4fr;
+    border-top: 1px solid grey;
+  }
+  aside {
+    grid-area: aside;
+    padding: 20px;
+    background-color:black;
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+  }
+  div {
+    grid-area: phrase;
+  }
+  img {
+    grid-area: img;
+    width: 100%;
+    height: auto;
+  }
+</style>
