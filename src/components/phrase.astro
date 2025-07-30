@@ -1,9 +1,13 @@
+---
+const { button = true } = Astro.props;
+---
+
 <section>
   <p>
     Whether you're a beginner looking to explore expressive movement or an
     advanced dancer ready to refine your technique, we have classes for you!
   </p>
-  <button> Reserve your spot </button>
+  {button ? <button> Reserve your spot </button> : null}
 </section>
 
 <style>
@@ -13,7 +17,7 @@
     align-content: center;
     background-color: blue;
     padding: 60px 11% 70px;
-    p{
+    p {
       font-size: 32px;
       color: white;
       margin-bottom: 20px;
@@ -23,7 +27,7 @@
   button {
     position: absolute;
     bottom: 24px;
-    left:11%;
+    left: 11%;
     padding: 20px 30px;
     background-color: rgb(208, 251, 249);
     font-size: 16px;
