@@ -1,0 +1,141 @@
+---
+import { Image, Picture } from "astro:assets";
+import sophia from "/src/assets/img/girl_black_white.webp";
+import alissa from "/src/assets/img/face-dancer.avif";
+import dataInstructors from "../assets/data/instructor.json";
+---
+
+<section>
+  <aside><p>Meet Our Founders</p></aside>
+  <article class="founder1">
+    <Picture src={sophia} alt="Sophia Bennett" />
+    <footer>
+      <p>Sophia Bennett</p>
+      <p>Founder & Instructor</p>
+    </footer>
+  </article>
+  <article class="founder2">
+    <img src="/src/assets/img/face-dancer.avif" alt="Alisa Morris"  
+    loading="lazy"/>
+    <footer>
+      <p>Alisa Morris</p>
+      <p>Founder & Program Manager</p>
+    </footer>
+  </article>
+  <aside class="instructors">
+    <p>Meet Our Instructors</p>
+  </aside>
+  {
+    dataInstructors.map((instructor, index) => (
+      <article class={`card${index + 1} card`}>
+        <p>{instructor.instructor}</p>
+        <p>{instructor.class}</p>
+        <p>{instructor.description}</p>
+      </article>
+    ))
+  }
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr;
+    grid-template-areas: "founders sophia alissa" "instructors card1 card2" "instructors card3 card4" "instructors card5 card6";
+  }
+
+  img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+  }
+  footer {
+    text-align: left;
+    padding: 15px 15px 20px;
+    p:first-child {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    p:last-child {
+      font-size: 18px;
+      font-style: italic;
+    }
+  }
+  .founder1 {
+    background-color: #d900ff;
+  }
+  .founder2{
+    background-color: #D0FBF9;
+  }
+
+  aside {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    font-size: 48px;
+    font-weight: 200;
+    p {
+      width: 300px;
+    }
+  }
+
+  aside:first-child {
+    grid-area: founders;
+  }
+  .instructors {
+    outline: 1px solid gray;
+    grid-area: instructors;
+  }
+  .card1 {
+    grid-area: card1;
+  }
+  .card2 {
+    grid-area: card2;
+  }
+  .card3 {
+    grid-area: card3;
+  }
+  .card4 {
+    grid-area: card4;
+  }
+  .card5 {
+    grid-area: card5;
+  }
+  .card6 {
+    grid-area: card6;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .card {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    outline: 1px solid gray;
+    p:first-child {
+      
+    }
+    p:nth-child(2) {
+      color: #d900ff;
+      margin-bottom: 100px;
+    }
+    p:last-child {
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    p{
+      animation: fadeIn 1s linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 30% ;
+    }
+  }
+</style>
