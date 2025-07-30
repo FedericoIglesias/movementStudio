@@ -1,7 +1,6 @@
 ---
 import { Image, Picture } from "astro:assets";
 import sophia from "/src/assets/img/girl_black_white.webp";
-import alissa from "/src/assets/img/face-dancer.avif";
 import dataInstructors from "../assets/data/instructor.json";
 ---
 
@@ -15,8 +14,11 @@ import dataInstructors from "../assets/data/instructor.json";
     </footer>
   </article>
   <article class="founder2">
-    <img src="/src/assets/img/face-dancer.avif" alt="Alisa Morris"  
-    loading="lazy"/>
+    <img
+      src="/src/assets/img/face-dancer.avif"
+      alt="Alisa Morris"
+      loading="lazy"
+    />
     <footer>
       <p>Alisa Morris</p>
       <p>Founder & Program Manager</p>
@@ -34,13 +36,24 @@ import dataInstructors from "../assets/data/instructor.json";
       </article>
     ))
   }
+  <img src="/src/assets/img/studio.webp" alt="studio" class="studio-image" loading="lazy"/>
+  <article class="studio">
+    <p>Our Space</p>
+    <p>
+      Whether you're a beginner looking to explore expressive movement or an
+      advanced dancer ready to refine your technique, we have classes for you!
+      Join our weekly sessions, <span>drop in for open-level classes</span>, or
+      take part in our upcoming choreography series. Don’t miss our special
+      Masterclass with Maxime Longue this Saturday! Limited spots available.
+    </p>
+  </article>
 </section>
 
 <style>
   section {
     display: grid;
     grid-template-columns: 3fr 2fr 2fr;
-    grid-template-areas: "founders sophia alissa" "instructors card1 card2" "instructors card3 card4" "instructors card5 card6";
+    grid-template-areas: "founders sophia alissa" "instructors card1 card2" "instructors card3 card4" "instructors card5 card6" "studio studio description";
   }
 
   img {
@@ -64,8 +77,8 @@ import dataInstructors from "../assets/data/instructor.json";
   .founder1 {
     background-color: #d900ff;
   }
-  .founder2{
-    background-color: #D0FBF9;
+  .founder2 {
+    background-color: #d0fbf9;
   }
 
   aside {
@@ -121,9 +134,7 @@ import dataInstructors from "../assets/data/instructor.json";
     color: white;
     padding: 20px;
     outline: 1px solid gray;
-    p:first-child {
-      
-    }
+
     p:nth-child(2) {
       color: #d900ff;
       margin-bottom: 100px;
@@ -132,10 +143,37 @@ import dataInstructors from "../assets/data/instructor.json";
       font-style: italic;
       color: rgba(255, 255, 255, 0.8);
     }
-    p{
+    p {
       animation: fadeIn 1s linear both;
       animation-timeline: view();
-      animation-range: entry 10% cover 30% ;
+      animation-range: entry 10% cover 30%;
+    }
+  }
+  .studio-image {
+    grid-area: studio;
+    width: 100%;
+    height: 450px;
+    outline: 1px solid gray;
+  }
+  .studio {
+    outline: 1px solid gray;
+    grid-area: description;
+    padding: 30px;
+    color: white;
+    background-color: black;
+    align-content: center;
+    p:first-child {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    p:last-child {
+      font-size: 18px;
+      font-style: italic;
+      span {
+        color: #d900ff;
+        font-weight: bold;
+      }
     }
   }
 </style>
