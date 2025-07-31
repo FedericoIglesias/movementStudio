@@ -1,7 +1,9 @@
 ---
-import { Image, Picture } from "astro:assets";
+import { Picture } from "astro:assets";
 import sophia from "/src/assets/img/girl_black_white.webp";
 import dataInstructors from "../assets/data/instructor.json";
+import alisa from "/src/assets/img/face-dancer.webp";
+import studio from "/src/assets/img/studio.webp";
 ---
 
 <section>
@@ -14,10 +16,7 @@ import dataInstructors from "../assets/data/instructor.json";
     </footer>
   </article>
   <article class="founder2">
-    <img
-      src="/src/assets/img/face-dancer.avif"
-      alt="Alisa Morris"
-    />
+    <Picture src={alisa} alt="Alisa Morris" />
     <footer>
       <p>Alisa Morris</p>
       <p>Founder & Program Manager</p>
@@ -35,12 +34,10 @@ import dataInstructors from "../assets/data/instructor.json";
       </article>
     ))
   }
-  <img
-    src="/src/assets/img/studio.webp"
-    alt="studio"
-    class="studio-image"
-  />
-  <article class="studio">
+  <div class="studio-image">
+    <Picture src={studio} alt="studio" />
+  </div>
+  <article class="studio-text">
     <p>Our Space</p>
     <p>
       Whether you're a beginner looking to explore expressive movement or an
@@ -158,7 +155,7 @@ import dataInstructors from "../assets/data/instructor.json";
     height: 450px;
     outline: 1px solid gray;
   }
-  .studio {
+  .studio-text {
     outline: 1px solid gray;
     grid-area: description;
     padding: 30px;
