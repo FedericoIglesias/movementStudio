@@ -1,9 +1,13 @@
 ---
 const { title, description, category, img } = Astro.props;
+import { Picture } from "astro:assets";
 ---
 
 <article>
   <header>
+    <div class="header-image">
+      <Picture src={img} alt={title} width={100} height={300} />
+    </div>
     <p>
       {category}
     </p>
@@ -19,17 +23,26 @@ const { title, description, category, img } = Astro.props;
 </article>
 
 <style define:vars={{ img }}>
-  article{
+  article {
     height: 100%;
     display: flex;
     flex-direction: column;
   }
-  header {
-    background-image: var(--img);
-    background-size: cover;
-    background-position: center;
+  .header-image {
+  width: 100%;
     height: 300px;
+    position: relative;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  header {
+    position: relative;
     & p {
+      position: absolute;
+      top: 10px;
+      left: 20px;
       color: white;
       font-size: 104px;
       padding-top: 20px;
@@ -69,7 +82,6 @@ const { title, description, category, img } = Astro.props;
       display: inline-block;
       height: 100%;
       width: 100%;
-
     }
     p:last-child:hover {
       color: white;
