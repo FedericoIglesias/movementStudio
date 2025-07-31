@@ -3,30 +3,30 @@
     "category": "C1",
     "title": "Hip Hop Foundations",
     "description": "This class introduces hip hop dance, including isolations, popping, locking, and basic footwork.",
-    "img": "/src/assets/img/35731e7e3eaafe4b29d3220fae17a4ef8ae06b2e.webp"
+    "img": "35731e7e3eaafe4b29d3220fae17a4ef8ae06b2e.webp"
   },
   {
     "category": "C2",
     "title": "Hip Hop Freestyle",
     "description": "This class helps you develop your own unique movement vocabulary and respond to music in the moment.",
-    "img": "/src/assets/img/banner_studio.webp"
+    "img": "banner_studio.webp"
   },
   {
     "category": "D5",
     "title": "Jazz Funk",
     "description": "This class is perfect for those who love to dance with power and attitude.",
-    "img": "/src/assets/img/dancer.webp"
+    "img": "dancer.webp"
   },
   {
     "category": "B2",
     "title": "Contact Improvisation",
     "description": "This class focuses on movement through touch and weight sharing.",
-    "img": "/src/assets/img/tango.webp"
+    "img": "tango.webp"
   },
   {
     "category": "C4",
     "title": "Jazz Technique",
     "description": "This class focuses on classic jazz styles while building strength, flexibility, and musicality.",
-    "img": "/src/assets/img/men_dancers.webp"
+    "img": "men_dancers.webp"
   }
 ]

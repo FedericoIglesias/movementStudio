@@ -7,7 +7,10 @@ import dataClasses from "../assets/data/class.json";
   <main>
     <aside>
       <h2>Booking Experience for Classes</h2>
-      <p>Explore our diverse range of classes designed to enhance your movement skills and overall fitness.</p>
+      <p>
+        Explore our diverse range of classes designed to enhance your movement
+        skills and overall fitness.
+      </p>
       <p>Join us every Friday evening for an invigorating experience!</p>
     </aside>
     {
@@ -17,7 +20,7 @@ import dataClasses from "../assets/data/class.json";
             title={item.title}
             description={item.description}
             category={item.category}
-            img={`url(${item.img})`}
+            img={`url(${"/src/assets/img/" + item.img})`}
           />
         </div>
       ))
@@ -32,7 +35,7 @@ import dataClasses from "../assets/data/class.json";
     grid-template-columns: 3fr 2fr 2fr;
   }
 
-  div{
+  div {
     height: 450px;
   }
 
@@ -45,7 +48,7 @@ import dataClasses from "../assets/data/class.json";
       font-size: 48px;
       margin-bottom: 10px;
     }
-    p{
+    p {
       font-size: 16px;
       margin-bottom: 10px;
     }
