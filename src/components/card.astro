@@ -11,10 +11,11 @@ const imgs = import.meta.glob("../assets/img/*.webp", {
     <div class="header-image">
       {
         Object.keys(imgs).map((imgKey) => {
+          const img = imgs[imgKey];
           if (imgKey.replace("../", "/src/") !== image) return null;
           return (
             <Picture
-              src={imgKey.replace("../", "/src/")}
+              src={img.src}
               alt={imgKey}
               width={100}
               height={100}
