@@ -1,18 +1,33 @@
 ---
-const { title, description, category, img } = Astro.props;
 import { Picture } from "astro:assets";
+const { title, description, category, image } = Astro.props;
+const imgs = import.meta.glob("../assets/img/*.webp", {
+  eager: true,
+}) as Record<string, ImageMetadata>;
 ---
 
 <article>
   <header>
     <div class="header-image">
-      <Picture src={img as ImageMetadata} alt={title} width={100} height={300} />
+      {
+        Object.keys(imgs).map((imgKey) => {
+          if (imgKey.replace("../", "/src/") !== image) return null;
+          return (
+            <Picture
+              src={imgKey.replace("../", "/src/")}
+              alt={imgKey}
+              width={100}
+              height={100}
+            />
+          );
+        })
+      }
     </div>
     <p>
       {category}
     </p>
   </header>
-  <main>  
+  <main>
     <p>{title}</p>
     <p>{description}</p>
   </main>
@@ -29,7 +44,7 @@ import { Picture } from "astro:assets";
     flex-direction: column;
   }
   .header-image {
-  width: 100%;
+    width: 100%;
     height: 300px;
     position: relative;
   }
@@ -90,3 +105,15 @@ import { Picture } from "astro:assets";
     }
   }
 </style>
+
+<!-- const imgs: Record<string, ImageMetadata> = import.meta.glob("../assets/img/*.webp", { eager: true });
+---
+
+{
+Object.keys(imgs).map((imgKey) => {
+  const img = imgs[imgKey];
+  return(
+  <Picture src={imgKey.replace("../","/src/")} alt={imgKey} width={100} height={100} />
+  )
+
+})} -->
