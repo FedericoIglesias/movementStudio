@@ -1,5 +1,4 @@
 ---
-import Image from "astro/components/Image.astro";
 import { Picture } from "astro:assets";
 const { title, description, category, image } = Astro.props;
 const imgs = import.meta.glob("../assets/img/*.webp", {
@@ -15,7 +14,7 @@ const imgs = import.meta.glob("../assets/img/*.webp", {
           if (imgKey.replace("../", "/src/") !== image) return null;
           console.log(imgKey.replace("../", "/src/") == image);
           const img = import(image);
-          return <Image src={image} alt={imgKey} width={100} height={100} />;
+          return <Picture src={image} alt={imgKey} width={100} height={100} />;
         })
       }
     </div>
