@@ -1,10 +1,10 @@
 ---
 import { Picture } from "astro:assets";
- import card1 from"/src/assets/img/35731e7e3eaafe4b29d3220fae17a4ef8ae06b2e.webp"
- import card2 from"/src/assets/img/banner_studio.webp"
- import card3 from"/src/assets/img/dancer.webp"
- import card4 from"/src/assets/img/tango.webp"
- import card5 from"/src/assets/img/men_dancers.webp"
+import card1 from "/src/assets/img/35731e7e3eaafe4b29d3220fae17a4ef8ae06b2e.webp";
+import card2 from "/src/assets/img/banner_studio.webp";
+import card3 from "/src/assets/img/dancer.webp";
+import card4 from "/src/assets/img/tango.webp";
+import card5 from "/src/assets/img/men_dancers.webp";
 ---
 
 <section>
@@ -21,8 +21,8 @@ import { Picture } from "astro:assets";
     <article class=`card1 card`>
       <header>
         <div class="header-image">
-          <Picture
-            src={card1}
+          <img
+            src="/src/assets/img/35731e7e3eaafe4b29d3220fae17a4ef8ae06b2e.webp"
             alt="Hip Hop Foundations"
             width={300}
             height={300}
@@ -45,8 +45,8 @@ import { Picture } from "astro:assets";
     <article class=`card2 card`>
       <header>
         <div class="header-image">
-          <Picture
-            src={card2}
+          <img
+            src="/src/assets/img/banner_studio.webp"
             alt="Hip Hop Freestyle"
             width={300}
             height={300}
@@ -69,8 +69,8 @@ import { Picture } from "astro:assets";
     <article class=`card3 card`>
       <header>
         <div class="header-image">
-          <Picture
-            src={card3}
+          <img
+            src="/src/assets/img/dancer.webp"
             alt="Jazz Funk"
             width={300}
             height={300}
@@ -93,8 +93,8 @@ import { Picture } from "astro:assets";
     <article class=`card4 card`>
       <header>
         <div class="header-image">
-          <Picture
-            src={card4}
+          <img
+            src="/src/assets/img/tango.webp"
             alt="Contact Improvisation"
             width={300}
             height={300}
@@ -114,8 +114,8 @@ import { Picture } from "astro:assets";
     <article class=`card5 card`>
       <header>
         <div class="header-image">
-          <Picture
-            src={card5}
+          <img
+            src="/src/assets/img/men_dancers.webp"
             alt="Jazz Technique"
             width={300}
             height={300}
@@ -203,7 +203,7 @@ import { Picture } from "astro:assets";
         font-size: 104px;
         padding-top: 20px;
         padding-left: 20px;
-        }
+      }
     }
     .mainCard {
       display: inline;
