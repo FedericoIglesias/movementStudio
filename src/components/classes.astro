@@ -14,26 +14,124 @@ import { Picture } from "astro:assets";
       </p>
       <p>Join us every Friday evening for an invigorating experience!</p>
     </aside>
-    {
-      dataClasses.map((item, index) => (
-        <article>
-          <header>
-            <div class="header-image">
-              <Picture src={item.img} alt={item.title} width={1000} height={300} />
-            </div>
-            <p>{item.category}</p>
-          </header>
-          <main>
-            <p>{item.title}</p>
-            <p>{item.description}</p>
-          </main>
-          <footer>
-            <p>Fridays 7:00 PM - 9:00PM</p>
-            <p>Book now</p>
-          </footer>
-        </article>
-      ))
-    }
+
+    <article class=`card1 card`>
+      <header>
+        <div class="header-image">
+          <Picture
+            src="/src/assets/img/35731e7e3eaafe4b29d3220fae17a4ef8ae06b2e.webp"
+            alt="Hip Hop Foundations"
+            width={300}
+            height={300}
+          />
+        </div>
+        <p>C1</p>
+      </header>
+      <main class="mainCard">
+        <p>Hip Hop Foundations</p>
+        <p>
+          This class introduces hip hop dance, including isolations, popping,
+          locking, and basic footwork.
+        </p>
+      </main>
+      <footer>
+        <p>Fridays 7:00 PM - 9:00PM</p>
+        <p>Book now</p>
+      </footer>
+    </article>
+    <article class=`card2 card`>
+      <header>
+        <div class="header-image">
+          <Picture
+            src="/src/assets/img/banner_studio.webp"
+            alt="Hip Hop Freestyle"
+            width={300}
+            height={300}
+          />
+        </div>
+        <p>C2</p>
+      </header>
+      <main class="mainCard">
+        <p>Hip Hop Freestyle</p>
+        <p>
+          This class helps you develop your own unique movement vocabulary and
+          respond to music in the moment.
+        </p>
+      </main>
+      <footer>
+        <p>Fridays 7:00 PM - 9:00PM</p>
+        <p>Book now</p>
+      </footer>
+    </article>
+    <article class=`card3 card`>
+      <header>
+        <div class="header-image">
+          <Picture
+            src="/src/assets/img/dancer.webp"
+            alt="Jazz Funk"
+            width={300}
+            height={300}
+          />
+        </div>
+        <p>D5</p>
+      </header>
+      <main class="mainCard">
+        <p>Jazz Funk</p>
+        <p>
+          This class is perfect for those who love to dance with power and
+          attitude.
+        </p>
+      </main>
+      <footer>
+        <p>Fridays 7:00 PM - 9:00PM</p>
+        <p>Book now</p>
+      </footer>
+    </article>
+    <article class=`card4 card`>
+      <header>
+        <div class="header-image">
+          <Picture
+            src="/src/assets/img/tango.webp"
+            alt="Contact Improvisation"
+            width={300}
+            height={300}
+          />
+        </div>
+        <p>B2</p>
+      </header>
+      <main class="mainCard">
+        <p>Contact Improvisation</p>
+        <p>This class focuses on movement through touch and weight sharing.</p>
+      </main>
+      <footer>
+        <p>Fridays 7:00 PM - 9:00PM</p>
+        <p>Book now</p>
+      </footer>
+    </article>
+    <article class=`card5 card`>
+      <header>
+        <div class="header-image">
+          <Picture
+            src="/src/assets/img/men_dancers.webp"
+            alt="Jazz Technique"
+            width={300}
+            height={300}
+          />
+        </div>
+        <p>C4</p>
+      </header>
+      <main class="mainCard">
+        <p>Jazz Technique</p>
+        <p>
+          This class focuses on classic jazz styles while building strength,
+          flexibility, and musicality.
+        </p>
+      </main>
+      <footer>
+        <p>Fridays 7:00 PM - 9:00PM</p>
+        <p>Book now</p>
+      </footer>
+    </article>
   </main>
 </section>
 
@@ -78,5 +176,72 @@ import { Picture } from "astro:assets";
   }
   .card5 {
     grid-area: card5;
+  }
+  .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .header-image {
+      width: 100%;
+      height: 300px;
+      position: relative;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    header {
+      position: relative;
+      & p {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        color: white;
+        font-size: 104px;
+        padding-top: 20px;
+        padding-left: 20px;
+        }
+    }
+    .mainCard {
+      display: inline;
+      padding: 20px;
+      height: calc(450px - 300px - 35px);
+      p:first-child {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      p:nth-child(2) {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    }
+    footer {
+      height: 35px;
+      border-top: 1px solid grey;
+      display: grid;
+      grid-template-columns: 1fr 70px;
+      align-items: center;
+      p:first-child {
+        font-size: 12px;
+        color: blue;
+        padding: 10px;
+        margin-left: 15px;
+        border-right: 1px solid grey;
+      }
+      p:last-child {
+        font-size: 12px;
+        cursor: pointer;
+        text-align: center;
+        align-content: center;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+      }
+      p:last-child:hover {
+        color: white;
+        background-color: blue;
+        transition: background-color 0.3s ease-in-out;
+      }
+    }
   }
 </style>
