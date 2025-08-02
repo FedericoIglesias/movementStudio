@@ -1,7 +1,10 @@
 ---
-import Card from "./card.astro";
-import dataClasses from "../assets/data/class.json";
 import { Picture } from "astro:assets";
+ import card1 from"/src/assets/img/35731e7e3eaafe4b29d3220fae17a4ef8ae06b2e.webp"
+ import card2 from"/src/assets/img/banner_studio.webp"
+ import card3 from"/src/assets/img/dancer.webp"
+ import card4 from"/src/assets/img/tango.webp"
+ import card5 from"/src/assets/img/men_dancers.webp"
 ---
 
 <section>
@@ -19,7 +22,7 @@ import { Picture } from "astro:assets";
       <header>
         <div class="header-image">
           <Picture
-            src="/src/assets/img/35731e7e3eaafe4b29d3220fae17a4ef8ae06b2e.webp"
+            src={card1}
             alt="Hip Hop Foundations"
             width={300}
             height={300}
@@ -43,7 +46,7 @@ import { Picture } from "astro:assets";
       <header>
         <div class="header-image">
           <Picture
-            src="/src/assets/img/banner_studio.webp"
+            src={card2}
             alt="Hip Hop Freestyle"
             width={300}
             height={300}
@@ -67,7 +70,7 @@ import { Picture } from "astro:assets";
       <header>
         <div class="header-image">
           <Picture
-            src="/src/assets/img/dancer.webp"
+            src={card3}
             alt="Jazz Funk"
             width={300}
             height={300}
@@ -91,7 +94,7 @@ import { Picture } from "astro:assets";
       <header>
         <div class="header-image">
           <Picture
-            src="/src/assets/img/tango.webp"
+            src={card4}
             alt="Contact Improvisation"
             width={300}
             height={300}
@@ -112,7 +115,7 @@ import { Picture } from "astro:assets";
       <header>
         <div class="header-image">
           <Picture
-            src="/src/assets/img/men_dancers.webp"
+            src={card5}
             alt="Jazz Technique"
             width={300}
             height={300}
