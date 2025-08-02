@@ -1,6 +1,7 @@
 ---
 import Card from "./card.astro";
 import dataClasses from "../assets/data/class.json";
+import { Picture } from "astro:assets";
 ---
 
 <section>
@@ -15,14 +16,22 @@ import dataClasses from "../assets/data/class.json";
     </aside>
     {
       dataClasses.map((item, index) => (
-        <div class={`card${index + 1}`}>
-          <Card
-            title={item.title}
-            description={item.description}
-            category={item.category}
-            image={item.img}
-          />
-        </div>
+        <article>
+          <header>
+            <div class="header-image">
+              <Picture src={item.img} alt={item.title} width={1000} height={300} />
+            </div>
+            <p>{item.category}</p>
+          </header>
+          <main>
+            <p>{item.title}</p>
+            <p>{item.description}</p>
+          </main>
+          <footer>
+            <p>Fridays 7:00 PM - 9:00PM</p>
+            <p>Book now</p>
+          </footer>
+        </article>
       ))
     }
   </main>
